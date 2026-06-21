@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Namisa Uwengmawa Isaac - INS 205 Assignment</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f4f4f4;
+}
+h1 {
+    text-align: center;
+    color: navy;
+    font-size: 36px;
+}
+section {
+    background-color: white;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+#send-btn {
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    background-color: #333;
+}
+</style>
+</head>
+<body>
+<h1>My Personal Web Page</h1>
+
+<section>
+<h2>About Me</h2>
+<p>
+Full Name: NAMISA UWENGMAWA ISAAC<br>
+Department: Computer Science<br>
+Matric Number: UJ/2025/CP/0208<br>
+Level: 200 Level
+</p>
+</section>
+
+<section>
+<h2>About This Page</h2>
+<p>
+This webpage was created as part of the INS 205 course assignment.
+It demonstrates the use of HTML5 and CSS in designing a simple static webpage.
+</p>
+</section>
+
+<section>
+<h2>Contact Me</h2>
+<a href="mailto:2025cp0208@unijos.edu.ng" id="send-btn">
+Send Email
+</a>
+</section>
+
+<script>
+const matric = "UJ/2025/CP/0208";
+function hashString(str) {
+    let hash = 0;
+    for (let i = 0; i < str.length; i++) {
+        hash = (hash * 31 + str.charCodeAt(i)) >>> 0;
+    }
+    return hash;
+}
+const normalised = matric.trim().toUpperCase();
+const hue = hashString(normalised) % 360;
+const buttonColour = `hsl(${hue}, 65%, 45%)`;
+document.getElementById("send-btn").style.background = buttonColour;
+</script>
+</body>
+</html>
